@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/logo.jpg">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo" title="Document Management System">
+            <img src="./images/logo.jpg" alt="">
+            <h2>D<span class="danger">M</span>S</h2>
+        </div>
+        <div class="navbar">
+            <a href="index.html">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+            </a>
+            <a href="minor.html">
+                <span class="material-icons-sharp">today</span>
+                <h3>Choose Minor Project</h3>
+            </a>
+            <a href="timetable.html" class="active" onclick="timeTableAll()">
+                <span class="material-icons-sharp">today</span>
+                <h3>Time Table</h3>
+            </a> 
+            <a href="exam.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Examination</h3>
+            </a>
+            <a href="password.html">
+                <span class="material-icons-sharp">password</span>
+                <h3>Change Password</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Logout</h3>
+            </a>
+        </div>
+        <div id="profile-btn" style="display: none;">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        
+    </header>
+
+    
+    <body style="background-color: #f6f6f9;"></body>
+    <h1>Faculty List</h1>
+    <br>
+    <br>
+    <input type="text" id="searchInput" oninput="searchTable()" placeholder="Search by name">
+
+
+    <table id="nameTable">
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Name Of Faculty</th>
+                <th>MUJ ID</th>
+                <th>Designation</th>
+                <th>Specialization</th>
+                <th>Mobile No</th>
+                <th>E-mail ID</th>
+                <th>Problem Statement</th>
+                <th>Apply</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-name="Sandeep Chaurasia">
+                <td>1</td>
+                <td >Prof. (Dr) Sandeep Chaurasia</td>
+                <td>MUJ0527</td>
+                <td>Professor & Director SCSE</td>
+                <td>Machine Learning, Deep Learning</td>
+                <td>9571228110</td>
+                <td>sandeep.chaurasia@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="openProposalForm()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Prof. (Dr) Neha Chaudhary</td>
+                <td>MUJ0818</td>
+                <td>Professor & HoD CSE</td>
+                <td>Software Testing, AI</td>
+                <td>9785500056</td>
+                <td>chaudhary.neha@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Prof. (Dr) Roheet Bhatnagar</td>
+                <td>MUJ0120</td>
+                <td>Professor</td>
+                <td>Software Engineering, Databases, Big Data Analytics</td>
+                <td>8003897115</td>
+                <td>roheet.bhatnagar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Prof. (Dr) Sandeep Joshi</td>
+                <td>MUJ0155</td>
+                <td>Professor</td>
+                <td>Network & Security</td>
+                <td>9571449301</td>
+                <td>sandeep.joshi@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Prof. (Dr) Umashankar Rawat</td>
+                <td>MUJ0373</td>
+                <td>Professor</td>
+                <td>Information System & Security</td>
+                <td>7023982689</td>
+                <td>umashankar.rawat@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Prof. (Dr) Chhatar Singh Lamba</td>
+                <td>MUJ0803</td>
+                <td>Professor</td>
+                <td>Security, Net Working</td>
+                <td>9928000040</td>
+                <td>cs.lamba@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Prof. (Dr) Prakash Ramani</td>
+                <td>MUJ0599</td>
+                <td>Professor</td>
+                <td>Machine Learning, Internet of Things</td>
+                <td>9887487606</td>
+                <td>prakash.ramani@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Dr Sunita Singhal</td>
+                <td>MUJ0713</td>
+                <td>Associate Prof (Senior Scale)</td>
+                <td>Distributed Computing, Soft Computing</td>
+                <td>9352556599</td>
+                <td>sunita.singhal@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Dr Mahesh Jangid</td>
+                <td>MUJ0146</td>
+                <td>Associate Prof</td>
+                <td>Image Processing, Computer Vision</td>
+                <td>9799969068</td>
+                <td>mahesh.jangid@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Dr Ashish Kumar</td>
+                <td>MUJ0547</td>
+                <td>Associate Prof</td>
+                <td>Data Mining, Web Development</td>
+                <td>8233244583</td>
+                <td>kumar.ashish@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Dr Rishi Gupta</td>
+                <td>MUJ0744</td>
+                <td>Associate Prof</td>
+                <td>Biometrics, Image Processing, Computer Vision, IOT</td>
+                <td>8435224742</td>
+                <td>rishi.gupta@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Dr Satyabrata Roy</td>
+                <td>MUJ1454</td>
+                <td>Associate Prof</td>
+                <td>Cryptography, Cellular Automata, Theory of Computation, Compiler Design, Chaotic Maps, IoT</td>
+                <td>8890257867</td>
+                <td>satyabrata.roy@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Dr. Ashish Sharma</td>
+                <td>MUJ1458</td>
+                <td>Associate Prof</td>
+                <td>Parallel Processing, Intelligent Cyber-Physical System</td>
+                <td>9694945550</td>
+                <td>sharma.ashish@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Dr. Neha Janu</td>
+                <td>MUJ1462</td>
+                <td>Associate Prof</td>
+                <td>Artificial Intelligence, Machine Learning</td>
+                <td>9414438907</td>
+                <td>neha.janu@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Dr. Amit Kumar Gupta</td>
+                <td>MUJ1367</td>
+                <td>Associate Prof</td>
+                <td>Machine Learning, Natural Language Processing, CPU Scheduling</td>
+                <td>7014402055</td>
+                <td>amit.gupta@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Dr. Jeyakrishnan V</td>
+                <td>MUJ1507</td>
+                <td>Associate Prof</td>
+                <td>AIML, Deep Learning, Cloud Computing</td>
+                <td>9994215490</td>
+                <td>jeyakrishnan.v@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Dr. Rajat Goel</td>
+                <td>MUJ1516</td>
+                <td>Associate Prof</td>
+                <td>Cybersecurity, Software Engineering, Information Security</td>
+                <td>9829553153</td>
+                <td>rajat.goel@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Dr. Praneet Saurabh</td>
+                <td>MUJ1542</td>
+                <td>Associate Prof</td>
+                <td>Computer Networks, Computational Intelligence</td>
+                <td>9755157989</td>
+                <td>praneet.saurabh@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Dr. Neelam Chaplot</td>
+                <td>MUJ1234</td>
+                <td>Associate Prof</td>
+                <td>Artificial Intelligence, Machine Learning, Data Mining</td>
+                <td>8302588886</td>
+                <td>neelam.chaplot@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Dr. Amit Garg</td>
+                <td>MUJ1402</td>
+                <td>Associate Prof</td>
+                <td>Algorithms and Mobile Ad-Hoc Networks</td>
+                <td>9897260563</td>
+                <td>amit.garg@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Dr. Sayar Singh Shekhawat</td>
+                <td>MUJ1523</td>
+                <td>Associate Prof</td>
+                <td>Nature Inspired Algorithms, Soft Computing</td>
+                <td>9460146107</td>
+                <td>sayar.shekhawat@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Dr Satpal Singh Kushwaha</td>
+                <td>MUJ1034</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Blockchain Technology</td>
+                <td>9413900119</td>
+                <td>satpal.singh@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Dr. Manmohan Sharma</td>
+                <td>MUJ1252</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Cloud Computing, Web Development, Automation Testing</td>
+                <td>8769732010</td>
+                <td>manmohan.sharma@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Dr. Ajay Kumar</td>
+                <td>MUJ1385</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Automata, Compiler design, Algorithms</td>
+                <td>9772850088</td>
+                <td>kumar.ajay@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Mr Vivek Singh Sikarwar</td>
+                <td>MUJ0301</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Robotics</td>
+                <td>9784594777</td>
+                <td>vivek.sikarwar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Dr. Susheela Vishnoi</td>
+                <td>MUJ1497</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Digital Image Processing, Algorithms</td>
+                <td>9214419555</td>
+                <td>susheela.vishnoi@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Dr. Prashant Vats</td>
+                <td>MUJ1501</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Soft Computing & IoT</td>
+                <td>9582003824</td>
+                <td>prashant.vats@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Dr. Ankur Pandey</td>
+                <td>MUJ1533</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Fanet, Cloud Computing</td>
+                <td>8319034883</td>
+                <td>ankur.pandey@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Dr. Neetu Gupta</td>
+                <td>MUJ1539</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Deep Learning & Cryptography</td>
+                <td>8619810611</td>
+                <td>neetu.gupta@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Dr. Gireesh Kumar</td>
+                <td>MUJ1544</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Software Reliability, Robotic Process Automation, AIML</td>
+                <td>9351531868</td>
+                <td>gireesh.kumar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Dr. Mayank Namdev</td>
+                <td>MUJ1550</td>
+                <td>Assistant Prof (Selection Grade)</td>
+                <td>Database Security, Computer Network</td>
+                <td>9826377765</td>
+                <td>mayank.namdev@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Mr Tarun Jain</td>
+                <td>MUJ0565</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Sentiment Analysis</td>
+                <td>9650789932</td>
+                <td>tarun.jain@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Mr. Anil Kumar</td>
+                <td>MUJ1183</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Software Engineering, Machine Learning</td>
+                <td>8319226027</td>
+                <td>anil.kumar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Dr. Ajit Noonia</td>
+                <td>MUJ1353</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>VANET, WSN, Machine Learning</td>
+                <td>9416500027</td>
+                <td>ajit.noonia@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Ms Anita Shrotriya</td>
+                <td>MUJ0660</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Soft Computing, VANET</td>
+                <td>9461624479</td>
+                <td>anita.shrotriya@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Dr Ankit Shrivastava</td>
+                <td>MUJ0264</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Biometrics, Image Processing, Computer Vision</td>
+                <td>7726926244</td>
+                <td>ankit.shrivastava@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Mr Priyank Singh Hada</td>
+                <td>MUJ0135</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Big Data Analytics & Cloud Computing</td>
+                <td>9001921991</td>
+                <td>priyanksingh.hada@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Ms Shikha Mundra</td>
+                <td>MUJ0380</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>NLP, Machine Learning</td>
+                <td>7073966039</td>
+                <td>shikha.mundra@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Mr. Girish Sharma</td>
+                <td>MUJ1394</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>IoT, Machine Learning, Theoretical Computer Science</td>
+                <td>9785445554</td>
+                <td>girish.sharma@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Mr. Shishir Singh Chauhan</td>
+                <td>MUJ1421</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Operating system, WSN, DBMS</td>
+                <td>7905307175</td>
+                <td>shishir.chauhan@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Mr. Lav Upadhyay</td>
+                <td>MUJ1431</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Algorithm, Machine Learning, Cybersecurity</td>
+                <td>8054041270</td>
+                <td>lav.upadhyay@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Mr. Mayank Kumar Jain</td>
+                <td>MUJ1432</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Machine Learning, Natural Language Processing, Image Processing</td>
+                <td>7987152575</td>
+                <td>mayank.jain@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Ms. Babita Tiwari</td>
+                <td>MUJ1447</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Artificial Intelligence & Knowledge Representation</td>
+                <td>8770177581</td>
+                <td>babita.tiwari@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Mr. Ashok Kumar Saini</td>
+                <td>MUJ1451</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Machine Learning, Deep Learning, Data Structure, DBMS</td>
+                <td>9829672455</td>
+                <td>ashok.saini@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Dr. Jayprakash Singh</td>
+                <td>MUJ1452</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Machine Learning, Deep Learning, Image Processing</td>
+                <td>9040181944</td>
+                <td>jayprakash.singh@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Dr. Juhi Singh</td>
+                <td>MUJ1488</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Digital Image Steganography, Artificial Intelligence</td>
+                <td>9717104752</td>
+                <td>juhi.singh@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Ms. Sushama</td>
+                <td>MUJ1522</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>AIML, Deep Learning, Image Processing</td>
+                <td>9899053688</td>
+                <td>sushama.tanwar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>Dr. Dibakar Sinha</td>
+                <td>MUJ1562</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Machine Learning, Data Science</td>
+                <td>7507531275</td>
+                <td>dibakar.sinha@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>Dr Anubha Parashar</td>
+                <td>MUJ0651</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Computer Vision and Pattern Recognition</td>
+                <td>9896546839</td>
+                <td>anubha.parashar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Ms. Surbhi Sharma</td>
+                <td>MUJ1517</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Machine Learning, Natural Language Processing, Machine Translation</td>
+                <td>9462527657</td>
+                <td>surbhi.sharma@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>Mr. Atul Kumar Verma</td>
+                <td>MUJ1662</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Graph Neural Network, Machine Learning.</td>
+                <td>7891437501</td>
+                <td>atul.verma@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Ms. Vaishali Chauhan</td>
+                <td>MUJ1702</td>
+                <td>Assistant Prof (Senior Scale)</td>
+                <td>Cloud computing, Data Privacy, Big Data Analytics</td>
+                <td>8988311660</td>
+                <td>vaishali.chauhan@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>Ms Bali Devi</td>
+                <td>MUJ1035</td>
+                <td>Assistant Prof</td>
+                <td>Machine learning, Deep learning</td>
+                <td>8290953377</td>
+                <td>bali.devi@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>Dr Aditya Sinha</td>
+                <td>MUJ1087</td>
+                <td>Assistant Prof</td>
+                <td>Image Processing, Agrelectro Agrobots, HCI</td>
+                <td>8050318934</td>
+                <td>aditya.sinha@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>Dr Arvind Kumar</td>
+                <td>MUJ0499</td>
+                <td>Assistant Prof</td>
+                <td>Neural Networks</td>
+                <td>9529034951</td>
+                <td>arvind.kumar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>Dr. Sakshi Shringi</td>
+                <td>MUJ1376</td>
+                <td>Assistant Prof</td>
+                <td>Machine Learning, Soft computing</td>
+                <td>9649832226</td>
+                <td>sakshi.shringi@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>Dr. Rishav Dubey</td>
+                <td>MUJ1388</td>
+                <td>Assistant Prof</td>
+                <td>5G Networks, D2D Communication, Computer Network</td>
+                <td>7023187177</td>
+                <td>rishav.dubey@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>Dr. Ajay Kumar-II</td>
+                <td>MUJ1419</td>
+                <td>Assistant Prof</td>
+                <td>Machine Learning, Deep Learning, Image processing, Remote sensing and GIS</td>
+                <td>8797666963</td>
+                <td>ajay.k@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>Ms. Pallavi</td>
+                <td>MUJ1425</td>
+                <td>Assistant Prof</td>
+                <td>Cryptography, Regression Analysis</td>
+                <td>7004008701</td>
+                <td>pallavi@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>Mr. Sunil Kumar Patel</td>
+                <td>MUJ1430</td>
+                <td>Assistant Prof</td>
+                <td>Cryptography, Algorithm & Network</td>
+                <td>9911574497</td>
+                <td>sunil.patel@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>Mr. Vivek Kumar</td>
+                <td>MUJ1433</td>
+                <td>Assistant Prof</td>
+                <td>DS & DAA, Cyber Security and Computer Network</td>
+                <td>7477742001</td>
+                <td>vivek.kumar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>Ms. Deepti Sharma</td>
+                <td>MUJ1512</td>
+                <td>Assistant Prof</td>
+                <td>Wireless Communication, AIML</td>
+                <td>9024541469</td>
+                <td>deepti.sharma@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>Dr. Rakesh Kumar</td>
+                <td>MUJ1524</td>
+                <td>Assistant Prof</td>
+                <td>Embedded System, Internet of Things</td>
+                <td>7903560889</td>
+                <td>rakesh.kumar1@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>Dr. Nishant Jain</td>
+                <td>MUJ1536</td>
+                <td>Assistant Prof</td>
+                <td>Artificial Intelligence & Machine Learning</td>
+                <td>7000525970</td>
+                <td>nishant.jain@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>Dr. Usha Jain</td>
+                <td>MUJ1559</td>
+                <td>Assistant Prof</td>
+                <td>Network Security</td>
+                <td>9468524330</td>
+                <td>usha.jain@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td>Ms. Santoshi Rudrakar</td>
+                <td>MUJ1675</td>
+                <td>Assistant Prof</td>
+                <td>Digital Forenics</td>
+                <td>6263675171</td>
+                <td>santoshi.rudrakar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>Mr. Ashish Tomar</td>
+                <td>MUJ1683</td>
+                <td>Assistant Prof</td>
+                <td>Cryptography, IoT Security, Blockchain</td>
+                <td>8839837532</td>
+                <td>ashish.tomar@jaipur.manipal.edu</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>Mr. Akshay Jadhav</td>
+                <td>MUJ1721</td>
+                <td>Assistant Prof</td>
+                <td>Software Engineering, Health Informatics</td>
+                <td>9424446307</td>
+                <td>akshay15jadhav93@gmail.com</td>
+                <td><button onclick="openWordDocument()">Open</button></td>
+                <td><button id="applyButton" onclick="applyForCourse()">Apply</button></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <script>
+        
+        function openWordDocument() {
+          
+          var wordDocumentURL = 'https://drive.google.com/drive/folders/1Jx_uX_J-QEVKbjA_ktKAjsOTDFQWr-J5';
+
+          window.open(wordDocumentURL, '_blank');
+        }
+      </script>
+ <script>
+    var numberOfApplicants = 0; 
+    var maxApplicants = 4;
+
+   
+    function applyForCourse() {
+      
+      if (numberOfApplicants < maxApplicants) {
+       
+        numberOfApplicants++;
+       
+        alert('Application already submitted!');
+      } else {
+      
+        alert('Sorry, the maximum number of applicants has been reached. You cannot apply for more than 4 teachers.');
+        
+       
+        document.getElementById('applyButton').disabled = true;
+        document.getElementById('applyButton').classList.add('closed');
+        
+      }
+    }
+    
+  </script>
+    <script>
+        
+        function openProposalForm() {
+          
+          var formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSfNny53slFQr7yWcR47K9bogcuXiddC7yzoI_iycmoKvlFxwg/viewform'; // Replace with your Google Form URL
+    
+          
+          window.open(formURL, '_blank');
+        }
+      </script>
+<script>
+    function searchTable() {
+      var searchQuery = document.getElementById('searchInput').value.toLowerCase();
+      var tableRows = document.getElementById('nameTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+      for (var i = 0; i < tableRows.length; i++) {
+        var rowData = tableRows[i].textContent.toLowerCase();
+
+        if (rowData.includes(searchQuery)) {
+          tableRows[i].style.display = '';
+        } else {
+          tableRows[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+<script src="app.js"></script>
+</html>
